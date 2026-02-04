@@ -3,14 +3,14 @@ const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 
 const days = [
-  "🌹 Rose Day",
-  "💌 Propose Day",
-  "🍫 Chocolate Day",
-  "🧸 Teddy Day",
-  "🤝 Promise Day",
-  "🤗 Hug Day",
-  "💋 Kiss Day",
-  "💖 Valentine’s Day"
+  "🌹 \nRose Day",
+  "💌 \nPropose Day",
+  "🍫 \nChocolate\nDay",
+  "🧸 \nTeddy Day",
+  "🤝 \nPromise Day",
+  "🤗 \nHug Day",
+  "💋 \nKiss Day",
+  "💖 \nValentine’s\nDay"
 ];
 
 days.forEach((day, i) => {
@@ -25,7 +25,7 @@ function openDay(i) {
   modal.classList.remove("hidden");
 
   switch(i) {
-    case 0: // Rose Day
+    case 0: 
       modalContent.innerHTML = `
         <h2>Pick a Rose 🌹</h2>
         <div class="choices">
