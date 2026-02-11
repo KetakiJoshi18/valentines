@@ -6,7 +6,7 @@
 }
 
 .page {
-  min-height: 100vh;
+  min-height: 85vh;
   background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   display: flex;
   align-items: center;
@@ -183,5 +183,95 @@ button:not(.yes):not(.no):hover {
 
   h1 {
     font-size: 1.6rem;
+  }
+}
+
+.final-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.yay {
+  font-size: 2.5rem;
+  color: #ff4d6d;
+}
+
+.main-msg {
+  font-size: 1.3rem;
+  margin: 5px 0;
+}
+
+.love-note {
+  opacity: 0.8;
+  line-height: 1.2;
+}
+
+.hearts {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.replay {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 25px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+/* Floating hearts animation */
+
+.floating-heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+#countdown {
+  text-align: center;
+  margin: 10px 0;
+  color: #ff4d6d;
+  max-height: 100px;
+}
+
+.timer {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+body {
+  background: linear-gradient(270deg, #ffe6eb, #ffd6e0, #ffe6f0);
+  background-size: 20% 200%;
+  animation: dreamyBG 15s ease infinite;
+}
+
+@keyframes dreamyBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-heart {
+  position: fixed;
+  bottom: -20px;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: floatHearts linear forwards;
+}
+
+@keyframes floatHearts {
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
   }
 }

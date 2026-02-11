@@ -116,12 +116,89 @@ function showMsg(msg) {
 
 function yes() {
   modalContent.innerHTML = `
-    <h1>YAY 🥰</h1>
-    <p>You’re officially my Valentine 💖</p>
-    <p style="opacity:0.7;margin-top:1rem">Screenshot this 😌</p>
+    <div class="final-card">
+      <h1 class="yay">YAAAYYY 🥰</h1>
+      
+      <p class="main-msg">
+        You just made my heart do a happy dance 💃❤️
+      </p>
+
+      <p class="love-note">
+        From today onwards…  
+        you’re officially my favorite person,
+        my safe place,
+        and my Valentine 💖
+      </p>
+
+      <div class="hearts">💖 💕 💗 💞 💘</div>
+
+      <button class="replay" onclick="closeModal()">
+        Open Again ✨
+      </button>
+    </div>
   `;
+
+  createFloatingHearts();
 }
 
 function closeModal() {
   modal.classList.add("hidden");
 }
+
+function createFloatingHearts() {
+  for (let i = 0; i < 20; i++) {
+    const heart = document.createElement("div");
+    heart.innerText = "💖";
+    heart.className = "floating-heart";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+  }
+}
+
+function startCountdown() {
+  const target = new Date("Feb 14, 2026 00:00:00").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = target - now;
+
+    if (diff <= 0) return;
+
+    document.getElementById("days").innerText =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").innerText =
+      Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+    document.getElementById("minutes").innerText =
+      Math.floor((diff / (1000 * 60)) % 60);
+
+    document.getElementById("seconds").innerText =
+      Math.floor((diff / 1000) % 60);
+  }, 1000);
+}
+
+startCountdown();
+
+function createBackgroundHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.innerText = "💖";
+    heart.className = "bg-heart";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+  }, 500);
+}
+
+createBackgroundHearts();
